@@ -25,10 +25,10 @@ function App() {
   }
  // {removeTodo: removeTodo} = {removeTodo}
   return (
-    <Context.Provider value={{removeTodo}}> 
+    <Context.Provider value={{removeTodo, toggleTodo}}> 
       <div className="wrapper">
         <h1>React tutorial</h1>
-        {todos.length ? < TodoList todos={todos} onToggle={toggleTodo}/> : <p>No todos !</p>}
+        {todos.length ? < TodoList todos={todos} /> : <p>No todos !</p>}
       </div>
     </Context.Provider>
   )

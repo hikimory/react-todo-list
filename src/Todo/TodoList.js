@@ -19,7 +19,6 @@ function TodoList(props){
                     todo={todo} 
                     key={todo.id} 
                     index={index} 
-                    onChange={props.onToggle}
                 />
                 )
             }) }
@@ -29,6 +28,5 @@ function TodoList(props){
 
 TodoList.propTypes = {
     todos: PropTypes.arrayOf(PropTypes.object).isRequired,
-    onToggle: PropTypes.func.isRequired
 }
 export default TodoList

@@ -17,8 +17,8 @@ const styles = {
     }
 }
 
-function TodoItem({ todo , index, onChange }){
-    const {removeTodo} = useContext(Context)
+function TodoItem({ todo , index }){
+    const {removeTodo, toggleTodo} = useContext(Context)
     const classes = []
 
     if(todo.completed){
@@ -32,7 +32,7 @@ function TodoItem({ todo , index, onChange }){
                     type="checkbox" 
                     style = {styles.input}
                     checked={todo.completed} 
-                    onChange={()=> onChange(todo.id)}
+                    onChange={()=> toggleTodo(todo.id)}
                 />
             <strong>{ index + 1 }</strong>
             &nbsp;
@@ -46,8 +46,7 @@ function TodoItem({ todo , index, onChange }){
 
 TodoItem.propTypes = {
     todo: PropTypes.object.isRequired,
-    index: PropTypes.number,
-    onChange: PropTypes.func.isRequired
+    index: PropTypes.number
 }
 
 export default TodoItem
